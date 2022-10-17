@@ -1,0 +1,114 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace C2_4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            Console.Write("가로 길이(m)를 입력하시오 : ");
+            float horizontal = float.Parse(Console.ReadLine());
+            Console.Write("세로 길이(m)를 입력하시오 : ");
+            float vertical = float.Parse(Console.ReadLine());
+            Console.WriteLine("사각형의 면적은 {0}m²입니다.", (int)(horizontal * vertical));
+
+            
+
+
+            Console.Write("\n임의의 달을 입력하시오 : ");
+            int month = int.Parse(Console.ReadLine());
+            int half_year = (month < 7) ?  0 : 1;
+            if(half_year==0)
+                Console.WriteLine("{0}월은 상반기입니다.", month);
+            else
+                Console.WriteLine("{0}월은 하반기입니다.", month);
+
+
+
+            Console.Write("\n정수를 입력하시오 : ");
+            int first = int.Parse(Console.ReadLine()); 
+            Console.Write("정수를 입력하시오 : ");
+            int second = int.Parse(Console.ReadLine()); 
+            Console.Write("정수를 입력하시오 : ");
+            int third = int.Parse(Console.ReadLine());
+            if(first+second<third)
+                Console.WriteLine("입력받은 수를 세 변의 길이로 가진 삼각형을 만들 수 없다.");
+            else if(second+third<first)
+                Console.WriteLine("입력받은 수를 세 변의 길이로 가진 삼각형을 만들 수 없다.");
+            else if (third+first<second)
+                Console.WriteLine("입력받은 수를 세 변의 길이로 가진 삼각형을 만들 수 없다.");
+            else
+                Console.WriteLine("입력받은 수를 세 변의 길이로 가진 삼각형을 만들 수 있다.");
+
+
+
+
+            Console.Write("\n년도를 입력하시오 : ");
+            int year = int.Parse(Console.ReadLine());
+            bool yoon_year = false;
+            if(year%4==0)
+            {
+                if (year % 400 == 0)
+                    yoon_year = true;
+                else if (year % 100 == 0)
+                    yoon_year = false;
+                else
+                    yoon_year = true;
+            }
+            if (yoon_year)
+                Console.WriteLine("{0}년은 윤년입니다.",year);
+            else
+                Console.WriteLine("{0}년은 평년입니다.", year);
+
+
+
+            Console.Write("\n학점을 입력하시오 : ");
+            int score = int.Parse(Console.ReadLine());
+            switch (score / 10)
+            {
+                case 10:
+                case 9:
+                    Console.WriteLine("A학점 입니다.");
+                    break;
+                case 8:
+                    Console.WriteLine("B학점 입니다.");
+                    break;
+                case 7:
+                    Console.WriteLine("C학점 입니다.");
+                    break;
+                case 6:
+                    Console.WriteLine("D학점 입니다.");
+                    break;
+                default:
+                    Console.WriteLine("F학점입니다");
+                    break;
+            }
+
+            
+
+            Console.Write("\n정수를 입력하시오 : ");
+            int num = int.Parse(Console.ReadLine());
+            switch (num % 2)
+            {
+                case 0:
+                    Console.WriteLine("짝수입니다.");
+                    break;
+                case 1:
+                    Console.WriteLine("홀수입니다.");
+                    break;
+                case -1:
+                    Console.WriteLine("홀수입니다.");
+                    break;
+                default:
+                    Console.WriteLine("잘못 입력하셨습니다.");
+                    break;
+            }
+        }
+
+    }
+}
